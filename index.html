@@ -1,733 +1,1017 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
 
-<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="UTF-8">
+        <title>Mason Lindsay | Aerospace Engineering</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Reset and Base Styles */
 
-    <title>Mason Lindsay | Aerospace Engineering</title>
+            * {
+                margin: 0;
 
-    <style>
+                padding: 0;
 
-        /* Reset and Base Styles */
+                box-sizing: border-box;
 
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-        }
-
-
-
-        body {
-
-            line-height: 1.6;
-
-            color: #333;
-
-            background-color: #f9f9f9;
-
-        }
-
-
-
-        .container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding: 0 20px;
-
-        }
-
-
-
-        /* Typography */
-
-        h1, h2, h3, h4 {
-
-            color: #14213d;
-
-            margin-bottom: 15px;
-
-        }
-
-
-
-        h1 {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        h2 {
-
-            font-size: 2rem;
-
-            border-bottom: 2px solid #14213d;
-
-            padding-bottom: 10px;
-
-            margin-top: 30px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        h3 {
-
-            font-size: 1.5rem;
-
-            margin-top: 20px;
-
-        }
-
-
-
-        p {
-
-            margin-bottom: 15px;
-
-            font-size: 1rem;
-
-        }
-
-
-
-        ul {
-
-            margin-left: 20px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        li {
-
-            margin-bottom: 8px;
-
-        }
-
-
-
-        a {
-
-            color: #1e3a8a;
-
-            text-decoration: none;
-
-            transition: color 0.3s;
-
-        }
-
-
-
-        a:hover {
-
-            color: #3e64ff;
-
-        }
-
-
-
-        /* Header */
-
-        header {
-
-            background-color: #14213d;
-
-            color: white;
-
-            padding: 20px 0;
-
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-        }
-
-
-
-        nav {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-        }
-
-
-
-        .logo {
-
-            font-size: 1.8rem;
-
-            font-weight: bold;
-
-        }
-
-
-
-        .nav-links {
-
-            display: flex;
-
-            list-style: none;
-
-        }
-
-
-
-        .nav-links li {
-
-            margin-left: 30px;
-
-        }
-
-
-
-        .nav-links a {
-
-            color: white;
-
-            font-weight: 500;
-
-        }
-
-
-
-        /* Hero Section */
-
-        .hero {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            padding: 60px 0;
-
-            background-color: #e5e5e5;
-
-        }
-
-
-
-        .hero-content {
-
-            flex: 1;
-
-            padding-right: 40px;
-
-        }
-
-
-
-        .hero-image {
-
-            flex: 1;
-
-            text-align: center;
-
-        }
-
-
-
-        .hero-image img {
-
-            max-width: 30%;
-
-            height: auto;
-
-            border-radius: 10px;
-
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-        }
-
-
-
-        .cta-button {
-
-            display: inline-block;
-
-            background-color: #fca311;
-
-            color: #14213d;
-
-            padding: 12px 25px;
-
-            border-radius: 5px;
-
-            font-weight: bold;
-
-            margin-top: 20px;
-
-            transition: background-color 0.3s;
-
-        }
-
-
-
-        .cta-button:hover {
-
-            background-color: #e5a100;
-
-            color: #14213d;
-
-        }
-
-
-
-        /* Section Styles */
-
-        section {
-
-            padding: 50px 0;
-
-        }
-
-
-
-        section:nth-child(even) {
-
-            background-color: #e5e5e5;
-
-        }
-
-
-
-        .section-heading {
-
-            text-align: center;
-
-            margin-bottom: 40px;
-
-        }
-
-
-
-        /* Skills Section */
-
-        .skills-container {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-            gap: 30px;
-
-        }
-
-
-
-        .skill-category {
-
-            background-color: white;
-
-            padding: 25px;
-
-            border-radius: 8px;
-
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-        }
-
-
-
-        /* Projects & Experience */
-
-        .projects-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-
-            gap: 30px;
-
-        }
-
-
-
-        .project-card {
-
-            background-color: white;
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-            transition: transform 0.3s;
-
-        }
-
-
-
-        .project-card:hover {
-
-            transform: translateY(-5px);
-
-        }
-
-
-
-        .project-info {
-
-            padding: 20px;
-
-        }
-
-
-
-        .project-title {
-
-            font-size: 1.3rem;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        /* Professional Affiliations */
-
-        .affiliations-container {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-            gap: 30px;
-
-        }
-
-
-
-        .affiliation-card {
-
-            background-color: white;
-
-            padding: 25px;
-
-            border-radius: 8px;
-
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-            transition: transform 0.3s;
-
-        }
-
-
-
-        .affiliation-card:hover {
-
-            transform: translateY(-5px);
-
-        }
-
-
-
-        /* Career & Personal Interests */
-
-        .interests-container {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-            gap: 30px;
-
-        }
-
-
-
-        .interest-card {
-
-            background-color: white;
-
-            padding: 25px;
-
-            border-radius: 8px;
-
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-        }
-
-
-
-        /* Contact Section */
-
-        .contact-container {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 50px;
-
-        }
-
-
-
-        .contact-info {
-
-            padding: 25px;
-
-            background-color: white;
-
-            border-radius: 8px;
-
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-        }
-
-
-
-        .contact-form {
-
-            padding: 25px;
-
-            background-color: white;
-
-            border-radius: 8px;
-
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-        }
-
-
-
-        .form-group {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        label {
-
-            display: block;
-
-            margin-bottom: 5px;
-
-            font-weight: 500;
-
-        }
-
-
-
-        input, textarea {
-
-            width: 100%;
-
-            padding: 10px;
-
-            border: 1px solid #ddd;
-
-            border-radius: 5px;
-
-            font-size: 1rem;
-
-        }
-
-
-
-        textarea {
-
-            min-height: 150px;
-
-        }
-
-
-
-        button {
-
-            background-color: #14213d;
-
-            color: white;
-
-            border: none;
-
-            padding: 12px 25px;
-
-            border-radius: 5px;
-
-            cursor: pointer;
-
-            font-weight: bold;
-
-            transition: background-color 0.3s;
-
-        }
-
-
-
-        button:hover {
-
-            background-color: #233a6c;
-
-        }
-
-
-
-        /* Footer */
-
-        footer {
-
-            background-color: #14213d;
-
-            color: white;
-
-            padding: 40px 0 20px;
-
-            text-align: center;
-
-        }
-
-
-
-        .footer-links {
-
-            display: flex;
-
-            justify-content: center;
-
-            list-style: none;
-
-            margin: 20px 0;
-
-        }
-
-
-
-        .footer-links li {
-
-            margin: 0 15px;
-
-        }
-
-
-
-        .footer-links a {
-
-            color: white;
-
-        }
-
-
-
-        .social-links {
-
-            margin: 20px 0;
-
-        }
-
-
-
-        .social-links a {
-
-            color: white;
-
-            margin: 0 10px;
-
-            font-size: 1.2rem;
-
-        }
-
-
-
-        .copyright {
-
-            margin-top: 20px;
-
-            font-size: 0.9rem;
-
-            color: #aaa;
-
-        }
-
-
-
-        /* Responsive Design */
-
-        @media (max-width: 768px) {
-
-            .hero {
-
-                flex-direction: column;
-
-                text-align: center;
-
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             }
 
+            body {
+                line-height: 1.6;
 
+                color: #333;
 
-            .hero-content {
-
-                padding-right: 0;
-
-                margin-bottom: 40px;
-
+                background-color: #f9f9f9;
             }
 
+            .container {
+                max-width: 1200px;
 
+                margin: 0 auto;
 
-            .contact-container {
-
-                grid-template-columns: 1fr;
-
+                padding: 0 20px;
             }
 
+            /* Typography */
 
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: #14213d;
+
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 2rem;
+
+                border-bottom: 2px solid #14213d;
+
+                padding-bottom: 10px;
+
+                margin-top: 30px;
+
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+
+                margin-top: 20px;
+            }
+
+            p {
+                margin-bottom: 15px;
+
+                font-size: 1rem;
+            }
+
+            ul {
+                margin-left: 20px;
+
+                margin-bottom: 20px;
+            }
+
+            li {
+                margin-bottom: 8px;
+            }
+
+            a {
+                color: #1e3a8a;
+
+                text-decoration: none;
+
+                transition: color 0.3s;
+            }
+
+            a:hover {
+                color: #3e64ff;
+            }
+
+            /* Header */
+
+            header {
+                background-color: #14213d;
+
+                color: white;
+
+                padding: 20px 0;
+
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            nav {
+                display: flex;
+
+                justify-content: space-between;
+
+                align-items: center;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+
+                font-weight: bold;
+            }
 
             .nav-links {
+                display: flex;
 
-                display: none;
-
+                list-style: none;
             }
 
-        }
+            .nav-links li {
+                margin-left: 30px;
+            }
 
-    </style>
+            .nav-links a {
+                color: white;
 
-</head>
+                font-weight: 500;
+            }
 
-<body>
+            /* Hero Section */
 
-    <!-- Header Section -->
+            .hero {
+                display: flex;
 
-    <header>
+                align-items: center;
 
-        <div class="container">
+                justify-content: space-between;
 
-            <nav>
+                padding: 60px 0;
 
+                background-color: #e5e5e5;
+            }
+
+            .hero-content {
+                flex: 1;
+
+                padding-right: 40px;
+            }
+
+            .hero-image {
+                flex: 1;
+
+                text-align: center;
+            }
+
+            .hero-image img {
+                max-width: 30%;
+
+                height: auto;
+
+                border-radius: 10px;
+
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .cta-button {
+                display: inline-block;
+
+                background-color: #fca311;
+
+                color: #14213d;
+
+                padding: 12px 25px;
+
+                border-radius: 5px;
+
+                font-weight: bold;
+
+                margin-top: 20px;
+
+                transition: background-color 0.3s;
+            }
+
+            .cta-button:hover {
+                background-color: #e5a100;
+
+                color: #14213d;
+            }
+
+            /* Section Styles */
+
+            section {
+                padding: 50px 0;
+            }
+
+            section:nth-child(even) {
+                background-color: #e5e5e5;
+            }
+
+            .section-heading {
+                text-align: center;
+
+                margin-bottom: 40px;
+            }
+
+            /* Skills Section */
+
+            .skills-container {
+                display: grid;
+
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+                gap: 30px;
+            }
+
+            .skill-category {
+                background-color: white;
+
+                padding: 25px;
+
+                border-radius: 8px;
+
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Projects & Experience */
+
+            .projects-grid {
+                display: grid;
+
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+                gap: 30px;
+            }
+
+            .project-card {
+                background-color: white;
+
+                border-radius: 8px;
+
+                overflow: hidden;
+
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+                transition: transform 0.3s;
+            }
+
+            .project-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .project-info {
+                padding: 20px;
+            }
+
+            .project-title {
+                font-size: 1.3rem;
+
+                margin-bottom: 10px;
+            }
+
+            /* Professional Affiliations */
+
+            .affiliations-container {
+                display: grid;
+
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+                gap: 30px;
+            }
+
+            .affiliation-card {
+                background-color: white;
+
+                padding: 25px;
+
+                border-radius: 8px;
+
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+                transition: transform 0.3s;
+            }
+
+            .affiliation-card:hover {
+                transform: translateY(-5px);
+            }
+
+            /* Career & Personal Interests */
+
+            .interests-container {
+                display: grid;
+
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+                gap: 30px;
+            }
+
+            .interest-card {
+                background-color: white;
+
+                padding: 25px;
+
+                border-radius: 8px;
+
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Contact Section */
+
+            .contact-container {
+                display: grid;
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 50px;
+            }
+
+            .contact-info {
+                padding: 25px;
+
+                background-color: white;
+
+                border-radius: 8px;
+
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .contact-form {
+                padding: 25px;
+
+                background-color: white;
+
+                border-radius: 8px;
+
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            label {
+                display: block;
+
+                margin-bottom: 5px;
+
+                font-weight: 500;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+
+                padding: 10px;
+
+                border: 1px solid #ddd;
+
+                border-radius: 5px;
+
+                font-size: 1rem;
+            }
+
+            textarea {
+                min-height: 150px;
+            }
+
+            button {
+                background-color: #14213d;
+
+                color: white;
+
+                border: none;
+
+                padding: 12px 25px;
+
+                border-radius: 5px;
+
+                cursor: pointer;
+
+                font-weight: bold;
+
+                transition: background-color 0.3s;
+            }
+
+            button:hover {
+                background-color: #233a6c;
+            }
+
+            /* Footer */
+
+            footer {
+                background-color: #14213d;
+
+                color: white;
+
+                padding: 40px 0 20px;
+
+                text-align: center;
+            }
+
+            .footer-links {
+                display: flex;
+
+                justify-content: center;
+
+                list-style: none;
+
+                margin: 20px 0;
+            }
+
+            .footer-links li {
+                margin: 0 15px;
+            }
+
+            .footer-links a {
+                color: white;
+            }
+
+            .social-links {
+                margin: 20px 0;
+            }
+
+            .social-links a {
+                color: white;
+
+                margin: 0 10px;
+
+                font-size: 1.2rem;
+            }
+
+            .copyright {
+                margin-top: 20px;
+
+                font-size: 0.9rem;
+
+                color: #aaa;
+            }
+
+            /* Responsive Design */
+
+            @media (max-width: 768px) {
+                .hero {
+                    flex-direction: column;
+
+                    text-align: center;
+                }
+
+                .hero-content {
+                    padding-right: 0;
+
+                    margin-bottom: 40px;
+                }
+
+                .contact-container {
+                    grid-template-columns: 1fr;
+                }
+
+                .nav-links {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header Section -->
+
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo">Mason Lindsay</div>
+
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+
+                        <li><a href="#skills">Skills</a></li>
+
+                        <li><a href="#projects">Projects</a></li>
+
+                        <li><a href="#affiliations">Affiliations</a></li>
+
+                        <li><a href="#career">Career</a></li>
+
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Mason Lindsay</h1>
+
+                    <h3>Aerospace Engineering Student</h3>
+
+                    <p>
+                        Passionate about satellite control systems, remote
+                        sensing, and space exploration. Currently seeking
+                        internship opportunities in the aerospace industry.
+                    </p>
+
+                    <a href="#contact" class="cta-button">Contact Me</a>
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="D8DE9D74-AD43-4C70-8773-948666C36D30.JPEG"
+                        alt="Mason Lindsay - Aerospace Engineering Student"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-heading">About Me</h2>
+
+                <p>
+                    I am a second-year Aerospace Engineering student at the
+                    University of California, Irvine with junior standing. My
+                    academic focus is on satellite control systems and remote
+                    sensing technologies for planetary environment monitoring.
+                    At UCI's Samueli School of Engineering, I'm engaged in
+                    rigorous coursework covering fluid dynamics, thermodynamics,
+                    mechanics of structures, and hands-on experience with
+                    industry-standard software.
+                </p>
+
+                <p>
+                    My passion lies in space exploration and satellite
+                    technologies, with particular interest in mission control
+                    systems and orbital mechanics. I am actively seeking
+                    internship opportunities where I can apply my technical
+                    skills while contributing to innovative aerospace projects.
+                </p>
+
+                <h3>Education</h3>
+
+                <p>
+                    <strong
+                        >University of California, Irvine — B.S. Aerospace
+                        Engineering</strong
+                    ><br />
+
+                    September 2023 - June 2027
+                </p>
+
+                <ul>
+                    <li>
+                        Samueli School of Engineering's Aerospace Engineering
+                        Program
+                    </li>
+
+                    <li>
+                        MATLAB research project investigating global energy
+                        usage patterns
+                    </li>
+
+                    <li>
+                        Coursework includes thermodynamics, fluid dynamics, and
+                        complemented by hands-on experience with coding and CAD
+                        software
+                    </li>
+
+                    <li>
+                        Additional research in space flight fundamentals,
+                        quasars, supermassive black holes, orbital mechanics,
+                        and planetary motion
+                    </li>
+
+                    <li>
+                        Conducted further personal research on NASA's Europa
+                        Clipper mission.
+                    </li>
+
+                    <a
+                        href="Europa Clipper Research.pdf"
+                        class="cta-button"
+                        target="_blank"
+                        align="center"
+                        >Click here to see what I learned about the Europa
+                        Clipper</a
+                    >
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-heading">Technical Skills</h2>
+
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+
+                        <ul>
+                            <li>
+                                MATLAB (Academic research project experience)
+                            </li>
+
+                            <li>Java</li>
+
+                            <li>Python (Self-taught)</li>
+
+                            <li>
+                                Machine Learning (LLM generation techniques,
+                                Coursera certification)
+                            </li>
+
+                            <li>HTML/CSS/JavaScript (Self-taught)</li>
+
+                            <a
+                                href="Coursera LLM Certificate.pdf"
+                                class="cta-button"
+                                target="_blank"
+                                align="center"
+                                >Click here to see my ML certification</a
+                            >
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Engineering Tools</h3>
+
+                        <ul>
+                            <li>SolidWorks (CAD modeling and design)</li>
+
+                            <li>Office 365 suite</li>
+
+                            <li>Data processing and visualization</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Additional Skills</h3>
+
+                        <ul>
+                            <li>Basic assembly and construction</li>
+
+                            <li>Soldering and organized wiring</li>
+
+                            <li>Active code commentary</li>
+
+                            <li>
+                                Languages: English (Native), Japanese
+                                (Conversational, Seal of Biliteracy recipient)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Experience Section -->
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-heading">Academic & Personal Projects</h2>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3 class="project-title">
+                                MATLAB Research Project (2023-2024)
+                            </h3>
+
+                            <ul>
+                                <li>
+                                    Conducted analysis on global energy usage
+                                </li>
+
+                                <li>
+                                    Developed data visualization tools using
+                                    MATLAB
+                                </li>
+
+                                <li>
+                                    Presented findings through comprehensive
+                                    data displays
+                                </li>
+
+                                <li>
+                                    Code randomizes data shown to encourage a
+                                    higher level of user interaction and
+                                    engagement
+                                </li>
+
+                                <a
+                                    href="MatLAB Energy Consumption Project.zip"
+                                    class="cta-button"
+                                    target="_blank"
+                                    >Click here to see my project</a
+                                >
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3 class="project-title">
+                                FRC Team 7042 (2021-2023)
+                            </h3>
+
+                            <ul>
+                                <li>
+                                    Designed and implemented swerve drive
+                                    drivetrain systems
+                                </li>
+
+                                <li>
+                                    Managed electrical systems with focus on
+                                    organized wiring
+                                </li>
+
+                                <li>
+                                    Contributed to team that qualified for 2023
+                                    International First Robotics Championship
+                                </li>
+
+                                <li>
+                                    Participated in Virgin Galactic
+                                    manufacturing facility tour in Long Beach
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3 class="project-title">Independent Research</h3>
+
+                            <ul>
+                                <li>Orbital mechanics and planetary motion</li>
+
+                                <li>Space flight fundamentals</li>
+
+                                <li>Quasars and supermassive black holes</li>
+
+                                <li>Satellite technology applications</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3 class="project-title">Work Experience</h3>
+
+                            <p>
+                                <strong
+                                    >UCI Campus Recreation, Team Up! -
+                                    Facilitator</strong
+                                ><br />
+
+                                November 2024 – Present
+                            </p>
+
+                            <p>
+                                <strong
+                                    >UCI Dining, Phoenix Food Court -
+                                    Employee</strong
+                                ><br />
+
+                                October 2023 - May 2024
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Affiliations Section -->
+
+        <section id="affiliations">
+            <div class="container">
+                <h2 class="section-heading">Professional Affiliations</h2>
+
+                <div class="affiliations-container">
+                    <div class="affiliation-card">
+                        <h3>
+                            American Institute of Aeronautics and Astronautics
+                            (AIAA)
+                        </h3>
+
+                        <p>Member since September 2024</p>
+
+                        <ul>
+                            <li>
+                                Actively engage with industry publications and
+                                newsletters
+                            </li>
+
+                            <li>
+                                Participate in networking events with aerospace
+                                employers
+                            </li>
+
+                            <li>Attended Robinson helicopter facility tour</li>
+                        </ul>
+                    </div>
+
+                    <div class="affiliation-card">
+                        <h3>Vertical Flight Society</h3>
+
+                        <p>Member since April 2024</p>
+
+                        <ul>
+                            <li>
+                                Network with industry leaders and innovators
+                            </li>
+
+                            <li>
+                                Participate in conference planning activities
+                            </li>
+
+                            <li>
+                                Attend technical presentations from experts
+                                across the country
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career & Personal Interests Section -->
+
+        <section id="career">
+            <div class="container">
+                <h2 class="section-heading">Career Objectives</h2>
+
+                <p>
+                    I am actively seeking internship opportunities in the
+                    aerospace industry, with particular interest in:
+                </p>
+
+                <div class="interests-container">
+                    <div class="interest-card">
+                        <h3>Professional Focus Areas</h3>
+
+                        <ul>
+                            <li>Satellite control systems</li>
+
+                            <li>Remote sensing technologies</li>
+
+                            <li>Space exploration missions</li>
+
+                            <li>Aerospace research and development</li>
+                        </ul>
+
+                        <p>
+                            My goal is to contribute to innovative projects that
+                            advance our understanding of space and planetary
+                            environments while developing my technical expertise
+                            in the aerospace field.
+                        </p>
+                    </div>
+
+                    <div class="interest-card">
+                        <h3>Beyond Academics</h3>
+
+                        <p>
+                            When not in the classroom or lab, I pursue
+                            activities that complement my academic interests:
+                        </p>
+
+                        <ul>
+                            <li>
+                                Following current NASA missions, particularly
+                                the Europa Clipper and other satellite-based
+                                planetary exploration
+                            </li>
+
+                            <li>
+                                Expanding my technical skillset through
+                                self-directed learning
+                            </li>
+
+                            <li>
+                                Outdoor activities including hiking, rock
+                                climbing, and alpine skiing - pursuits that
+                                require precision, planning, and problem-solving
+                                similar to engineering challenges
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-heading">Contact Me</h2>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+
+                        <p><strong>Email:</strong> masonal@uci.edu</p>
+
+                        <p><strong>Phone:</strong> (562) 552-1592</p>
+
+                        <p>
+                            <strong>Address:</strong><br />
+
+                            3753 Rose Avenue<br />
+
+                            Long Beach, CA 90807
+                        </p>
+
+                        <h3 class="mt-4">Availability</h3>
+
+                        <p>
+                            I am currently seeking summer 2025 internship
+                            opportunities. Please reach out if your organization
+                            has positions available for aspiring aerospace
+                            engineers.
+                        </p>
+
+                        <a
+                            href="Mason Lindsay - Resume 2025.pdf"
+                            class="cta-button"
+                            target="_blank"
+                            >Download Resume (PDF)</a
+                        >
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Send Me a Message</h3>
+
+                        <form
+                            action="https://formspree.io/f/movjgvrz"
+                            method="POST"
+                        >
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Company (Optional)</label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    placeholder="Enter your company name"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Type your message here"
+                                    rows="4"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+
+        <footer>
+            <div class="container">
                 <div class="logo">Mason Lindsay</div>
 
-                <ul class="nav-links">
-
+                <ul class="footer-links">
                     <li><a href="#about">About</a></li>
 
                     <li><a href="#skills">Skills</a></li>
@@ -739,541 +1023,25 @@
                     <li><a href="#career">Career</a></li>
 
                     <li><a href="#contact">Contact</a></li>
-
                 </ul>
 
-            </nav>
+                <div class="social-links">
 
-        </div>
+                    <a
+                        href="https://www.linkedin.com/in/mason-lindsay-58795a310/"
+                        target="_blank"
+                        >LinkedIn</a
+                    >
 
-    </header>
+                    <a href="https://github.com/Mason-lindsay" target="_blank"
+                        >GitHub</a
+                    >
+                </div>
 
-
-
-    <!-- Hero Section -->
-
-    <section class="hero">
-
-        <div class="container">
-
-            <div class="hero-content">
-
-                <h1>Mason Lindsay</h1>
-
-                <h3>Aerospace Engineering Student</h3>
-
-                <p>Passionate about satellite control systems, remote sensing, and space exploration. Currently seeking internship opportunities in the aerospace industry.</p>
-
-                <a href="#contact" class="cta-button">Contact Me</a>
-
+                <p class="copyright">
+                    © 2025 Mason Lindsay. All Rights Reserved.
+                </p>
             </div>
-
-            <div class="hero-image">
-
-                <img src="D8DE9D74-AD43-4C70-8773-948666C36D30.JPEG" alt="Mason Lindsay - Aerospace Engineering Student">
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- About Section -->
-
-    <section id="about">
-
-        <div class="container">
-
-            <h2 class="section-heading">About Me</h2>
-
-            <p>I am a second-year Aerospace Engineering student at the University of California, Irvine with junior standing. My academic focus is on satellite control systems and remote sensing technologies for planetary environment monitoring. At UCI's Samueli School of Engineering, I'm engaged in rigorous coursework covering fluid dynamics, thermodynamics, mechanics of structures, and hands-on experience with industry-standard software.</p>
-
-
-
-            <p>My passion lies in space exploration and satellite technologies, with particular interest in mission control systems and orbital mechanics. I am actively seeking internship opportunities where I can apply my technical skills while contributing to innovative aerospace projects.</p>
-
-
-
-            <h3>Education</h3>
-
-            <p><strong>University of California, Irvine — B.S. Aerospace Engineering</strong><br>
-
-            September 2023 - June 2027</p>
-
-            <ul>
-
-                <li>Samueli School of Engineering's Aerospace Engineering Program</li>
-
-                <li>MATLAB research project investigating global energy usage patterns</li>
-
-                <li>Coursework includes dynamics, statics, complemented by hands-on experience with coding and CAD software</li>
-
-                <li>Additional research in space flight fundamentals, quasars, supermassive black holes, orbital mechanics, and planetary motion</li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Skills Section -->
-
-    <section id="skills">
-
-        <div class="container">
-
-            <h2 class="section-heading">Technical Skills</h2>
-
-
-
-            <div class="skills-container">
-
-                <div class="skill-category">
-
-                    <h3>Programming</h3>
-
-                    <ul>
-
-                        <li>MATLAB (Academic research project experience)</li>
-
-                        <li>Java</li>
-
-                        <li>Python (Self-taught)</li>
-
-                        <li>Machine Learning (LLM generation techniques, Coursera certification)</li>
-
-                        <li>HTML/CSS/JavaScript (Self-taught)</li>
-
-                    </ul>
-
-                </div>
-
-
-
-                <div class="skill-category">
-
-                    <h3>Engineering Tools</h3>
-
-                    <ul>
-
-                        <li>SolidWorks (CAD modeling and design)</li>
-
-                        <li>Office 365 suite</li>
-
-                        <li>Data processing and visualization</li>
-
-                    </ul>
-
-                </div>
-
-
-
-                <div class="skill-category">
-
-                    <h3>Additional Skills</h3>
-
-                    <ul>
-
-                        <li>Basic assembly and construction</li>
-
-                        <li>Soldering and organized wiring</li>
-
-                        <li>Active code commentary</li>
-
-                        <li>Languages: English (Native), Japanese (Conversational, Seal of Biliteracy recipient)</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Projects & Experience Section -->
-
-    <section id="projects">
-
-        <div class="container">
-
-            <h2 class="section-heading">Academic & Personal Projects</h2>
-
-
-
-            <div class="projects-grid">
-
-                <div class="project-card">
-
-                    <div class="project-info">
-
-                        <h3 class="project-title">MATLAB Research Project (2023-2024)</h3>
-
-                        <ul>
-
-                            <li>Conducted analysis on global energy usage patterns</li>
-
-                            <li>Developed data visualization tools using MATLAB</li>
-
-                            <li>Presented findings through comprehensive data displays</li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="project-card">
-
-                    <div class="project-info">
-
-                        <h3 class="project-title">FRC Team 7042 (2021-2023)</h3>
-
-                        <ul>
-
-                            <li>Designed and implemented swerve drive drivetrain systems</li>
-
-                            <li>Managed electrical systems with focus on organized wiring</li>
-
-                            <li>Contributed to team that qualified for 2023 International First Robotics Championship</li>
-
-                            <li>Participated in Virgin Galactic manufacturing facility tour in Long Beach</li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="project-card">
-
-                    <div class="project-info">
-
-                        <h3 class="project-title">Independent Research</h3>
-
-                        <ul>
-
-                            <li>Orbital mechanics and planetary motion</li>
-
-                            <li>Space flight fundamentals</li>
-
-                            <li>Quasars and supermassive black holes</li>
-
-                            <li>Satellite technology applications</li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="project-card">
-
-                    <div class="project-info">
-
-                        <h3 class="project-title">Work Experience</h3>
-
-                        <p><strong>UCI Campus Recreation, Team Up! - Facilitator</strong><br>
-
-                        November 2024 – Present</p>
-
-
-
-                        <p><strong>UCI Dining, Phoenix Food Court - Employee</strong><br>
-
-                        October 2023 - May 2024</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Professional Affiliations Section -->
-
-    <section id="affiliations">
-
-        <div class="container">
-
-            <h2 class="section-heading">Professional Affiliations</h2>
-
-
-
-            <div class="affiliations-container">
-
-                <div class="affiliation-card">
-
-                    <h3>American Institute of Aeronautics and Astronautics (AIAA)</h3>
-
-                    <p>Member since September 2024</p>
-
-                    <ul>
-
-                        <li>Actively engage with industry publications and newsletters</li>
-
-                        <li>Participate in networking events with aerospace employers</li>
-
-                        <li>Attended Robinson helicopter facility tour</li>
-
-                    </ul>
-
-                </div>
-
-
-
-                <div class="affiliation-card">
-
-                    <h3>Vertical Flight Society</h3>
-
-                    <p>Member since April 2024</p>
-
-                    <ul>
-
-                        <li>Network with industry leaders and innovators</li>
-
-                        <li>Participate in conference planning activities</li>
-
-                        <li>Attend technical presentations from experts across the country</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Career & Personal Interests Section -->
-
-    <section id="career">
-
-        <div class="container">
-
-            <h2 class="section-heading">Career Objectives</h2>
-
-            <p>I am actively seeking internship opportunities in the aerospace industry, with particular interest in:</p>
-
-
-
-            <div class="interests-container">
-
-                <div class="interest-card">
-
-                    <h3>Professional Focus Areas</h3>
-
-                    <ul>
-
-                        <li>Satellite control systems</li>
-
-                        <li>Remote sensing technologies</li>
-
-                        <li>Space exploration missions</li>
-
-                        <li>Aerospace research and development</li>
-
-                    </ul>
-
-                    <p>My goal is to contribute to innovative projects that advance our understanding of space and planetary environments while developing my technical expertise in the aerospace field.</p>
-
-                </div>
-
-
-
-                <div class="interest-card">
-
-                    <h3>Beyond Academics</h3>
-
-                    <p>When not in the classroom or lab, I pursue activities that complement my academic interests:</p>
-
-                    <ul>
-
-                        <li>Following current NASA missions, particularly the Europa Clipper and other satellite-based planetary exploration</li>
-
-                        <li>Expanding my technical skillset through self-directed learning</li>
-
-                        <li>Outdoor activities including hiking, rock climbing, and alpine skiing - pursuits that require precision, planning, and problem-solving similar to engineering challenges</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Contact Section -->
-
-    <section id="contact">
-
-        <div class="container">
-
-            <h2 class="section-heading">Contact Me</h2>
-
-
-
-            <div class="contact-container">
-
-                <div class="contact-info">
-
-                    <h3>Get In Touch</h3>
-
-                    <p><strong>Email:</strong> masonal@uci.edu</p>
-
-                    <p><strong>Phone:</strong> (562) 552-1592</p>
-
-                    <p><strong>Address:</strong><br>
-
-                    3753 Rose Avenue<br>
-
-                    Long Beach, CA 90807</p>
-
-
-
-                    <h3 class="mt-4">Availability</h3>
-
-                    <p>I am currently seeking summer 2025 internship opportunities. Please reach out if your organization has positions available for aspiring aerospace engineers.</p>
-
-
-
-                    <a href="Mason Lindsay - Resume 2025.pdf" class="cta-button" target="_blank">Download Resume (PDF)</a>
-
-                </div>
-
-
-
-                <div class="contact-form">
-
-                    <h3>Send Me a Message</h3>
-
-                    <form>
-
-                        <div class="form-group">
-
-                            <label for="name">Name</label>
-
-                            <input type="text" id="name" name="name" required>
-
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <label for="email">Email</label>
-
-                            <input type="email" id="email" name="email" required>
-
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <label for="company">Company (Optional)</label>
-
-                            <input type="text" id="company" name="company">
-
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <label for="message">Message</label>
-
-                            <textarea id="message" name="message" required></textarea>
-
-                        </div>
-
-
-
-                        <button type="submit">Send Message</button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Footer -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="logo">Mason Lindsay</div>
-
-
-
-            <ul class="footer-links">
-
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#skills">Skills</a></li>
-
-                <li><a href="#projects">Projects</a></li>
-
-                <li><a href="#affiliations">Affiliations</a></li>
-
-                <li><a href="#career">Career</a></li>
-
-                <li><a href="#contact">Contact</a></li>
-
-            </ul>
-
-
-
-            <div class="social-links">
-
-                <!-- Add appropriate social icons here -->
-
-                <a href="https://www.linkedin.com/in/mason-lindsay-58795a310/" target="_blank">LinkedIn</a>
-
-                <a href="https://github.com/Mason-lindsay" target="_blank">GitHub</a>
-
-            </div>
-
-
-
-            <p class="copyright">© 2025 Mason Lindsay. All Rights Reserved.</p>
-
-        </div>
-
-    </footer>
-
-</body>
-
+        </footer>
+    </body>
 </html>
